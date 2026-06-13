@@ -104,6 +104,21 @@ main{
   to{opacity:1;transform:translateY(0)}
 }
 
+@keyframes slideInUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pulse{
+  0%, 100%{opacity:1}
+  50%{opacity:0.8}
+}
+
+@keyframes glow{
+  0%, 100%{box-shadow:0 0 10px rgba(99, 102, 241, 0.3)}
+  50%{box-shadow:0 0 30px rgba(99, 102, 241, 0.6)}
+}
+
 .tab-content.active{
   display:block;
 }
@@ -552,15 +567,16 @@ input::placeholder{
   width:100%;
 }
 
-.student-image{
+.status-image{
   width:100%;
-  max-width:250px;
+  max-width:280px;
   height:auto;
-  margin:20px auto;
+  margin:18px auto;
   display:block;
-  border-radius:12px;
-  border:2px solid var(--border);
-  box-shadow:0 4px 16px rgba(99, 102, 241, 0.2);
+  border-radius:14px;
+  border:3px solid var(--primary);
+  box-shadow:0 8px 24px rgba(99, 102, 241, 0.3);
+  animation:slideInUp 0.6s ease, glow 3s ease-in-out infinite;
 }
 
 @media(max-width:900px){
@@ -573,6 +589,7 @@ input::placeholder{
   main{padding:0 12px 32px}
   .card{padding:18px}
   .btn{padding:10px 16px;font-size:12px}
+  .status-image{max-width:220px}
 }
 </style>
 </head>
@@ -735,6 +752,7 @@ input::placeholder{
 
     <section class="card">
       <h2>Election Status</h2>
+      <img src="IMG-20260613-112500811.jpg" alt="Student Voting" class="status-image">
       <div id="statusBox"></div>
     </section>
   </div>
