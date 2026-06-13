@@ -614,8 +614,6 @@ input::placeholder{
           <span class="value" id="cred">XXXXX</span>
         </div>
 
-        <img id="studentVotingImage" class="student-image hidden" src="https://images.unsplash.com/photo-1494888286974-455c5a39db88?w=400&h=500&fit=crop" alt="Student Voting">
-
         <h3 style="margin:16px 0 14px 0;font-size:16px;font-weight:800">Select Your Candidates</h3>
         
         <div class="post-section">
@@ -748,6 +746,8 @@ input::placeholder{
     <section class="card">
       <h2>Live Statistics</h2>
       <div style="font-size:40px;font-weight:800;color:var(--primary);margin-bottom:10px" id="totalVotesDisplay">0 Votes</div>
+      
+      <img class="student-image" src="https://images.unsplash.com/photo-1494888286974-455c5a39db88?w=400&h=500&fit=crop" alt="Student Voting">
       
       <div id="statsContent"></div>
       <button class="btn primary refresh-btn" id="refreshBoardBtn">🔄 Refresh Board</button>
@@ -910,7 +910,6 @@ document.getElementById("issueBtn").onclick = () => {
   state.issued.set(id, c);
   document.getElementById("cred").textContent = c;
   document.getElementById("ballot").classList.remove("hidden");
-  document.getElementById("studentVotingImage").classList.remove("hidden");
   showAlert("eligibilityMsg", "✓ Credential issued", "success");
 };
 
@@ -953,7 +952,6 @@ document.getElementById("castBtn").onclick = () => {
     document.getElementById("studentId").value = "";
     document.getElementById("ballot").classList.add("hidden");
     document.getElementById("receipt").classList.add("hidden");
-    document.getElementById("studentVotingImage").classList.add("hidden");
     document.getElementById("eligibilityMsg").innerHTML = "";
     document.getElementById("castMsg").innerHTML = "";
     
@@ -1116,7 +1114,6 @@ document.getElementById("resetBtn").onclick = () => {
     document.getElementById("studentId").value = "";
     document.getElementById("ballot").classList.add("hidden");
     document.getElementById("receipt").classList.add("hidden");
-    document.getElementById("studentVotingImage").classList.add("hidden");
     updateStatusBox();
     updateStats();
     showAlert("adminMsg", "✓ System reset", "success");
